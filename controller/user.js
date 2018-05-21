@@ -1,6 +1,7 @@
 var mysql = require('mysql'); 
 var dbConfig = require('../utils/DBConfig'); 
-var userSQL = require('../model/user'); 
+var userSQL = require('../model/user');
+const axios = require('axios');
 // 使用DBConfig.js的配置信息创建一个MySQL连接池 
 var pool = mysql.createPool( dbConfig.mysql );
 // 响应一个JSON数据 
@@ -56,10 +57,11 @@ const register = (req, res, next) => {
  	}); 
 }
 const login = (req, res, next) => { 
+
 	// 从连接池获取连接 
  	pool.getConnection(function(err, connection) { 
  		// 获取前台页面传过来的参数 
- 		var param = req.body; 
+ 		var param = req.body;
  		// 建立连接 增加一个用户信息 
  		connection.query(userSQL.getUserByName, [param.username, param.password], function(err, result) {
  			if(result) {
@@ -179,10 +181,37 @@ const updatepwd = (req, res, next) => {
  		}); 
  	}); 
 }
+const getCode = (req, res, next) => {
+	const config = req.body;
+	axios({
+        method: 'post',
+        url: 'https://open.ucpaas.com/ol/sms/sendsms/',
+        data: {
+	        sid: 'bbcf4dd1920b2f6e3f1dfab86ce1aa96',
+	        token: 'd4ea631cbf617638388d3b1c2216d336',
+	        appid: 'c9a69818c8404ff2ad85975d92140f3f',
+	        templateid: '299745',
+	        mobile: config.mobile,
+	        param: config.param
+	    },
+	    headers: {
+	        'Content-Type': 'application/json;charset=utf-8',
+	        'Accept': 'application/json'
+	    }
+    }).then(function(result){
+    	res.json({
+    		ret: true,
+    		data: {
+    			code: config.param
+    		}
+    	})
+    })
+}
 module.exports = {
 	register,
 	login,
 	userInfo,
 	updateInfo,
-	updatepwd
+	updatepwd,
+	getCode
 }

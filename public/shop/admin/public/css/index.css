@@ -1,0 +1,15 @@
+.row{
+        margin-top: 55px;
+        margin-left:10px;
+        margin-right: 10px;
+       
+    }
+    .panel-title,.list-group-item{ text-align: center;
+    }
+    .main{
+        padding-top: 30px;
+        padding-left: 30px;
+
+    }
+    
+   

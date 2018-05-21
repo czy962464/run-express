@@ -3,19 +3,19 @@
 	"data":{
 		"hot": [{
 			"id":"01",
-			"imgUrl":"../../../static/img/hotimg1.jpg"
+			"imgUrl":"../../../static/img/game1.jpg"
 		},{
 			"id":"02",
-			"imgUrl":"../../../static/img/hotimg1.jpg"
+			"imgUrl":"../../../static/img/game2.jpg"
 		},{
 			"id":"03",
-			"imgUrl":"../../../static/img/hotimg1.jpg"
+			"imgUrl":"../../../static/img/game3.jpg"
 		},{
 			"id":"04",
-			"imgUrl":"../../../static/img/hotimg1.jpg"
+			"imgUrl":"../../../static/img/game1.jpg"
 		},{
 			"id":"05",
-			"imgUrl":"../../../static/img/hotimg1.jpg"
+			"imgUrl":"../../../static/img/game2.jpg"
 		}]
 	}
 }

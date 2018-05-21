@@ -1,9 +1,9 @@
 module.exports = { 
 	mysql: {
-		host: '127.0.0.1', 
+		host: '139.129.208.229', 
 		user: 'root', 
-		password: 'czy', 
-		database:'job', // 前面建的user表位于这个数据库中 
+		password: '032a82067b', 
+		database:'job',
 		port: 3306 
 	} 
 };
