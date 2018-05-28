@@ -189,8 +189,8 @@ const getCode = (req, res, next) => {
         data: {
 	        sid: 'bbcf4dd1920b2f6e3f1dfab86ce1aa96',
 	        token: 'd4ea631cbf617638388d3b1c2216d336',
-	        appid: 'c9a69818c8404ff2ad85975d92140f3f',
-	        templateid: '299745',
+	        appid: '3b1e28c1521a413fac6f745e51970db9',
+	        templateid: '329525',
 	        mobile: config.mobile,
 	        param: config.param
 	    },
